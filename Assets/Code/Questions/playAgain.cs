@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class playAgain : MonoBehaviour
 {
+
+ [SerializeField]
+ private FloatSO scoreSO;
+
 void completeQuestion()
     {
         SceneManager.LoadScene(1);
@@ -17,6 +21,7 @@ private void OnCollisionEnter2D(Collision2D collision)
     {
         Invoke("completeQuestion", 1);
         AudioManager.Instance.PlaySFX(AudioManager.Instance.correctSFX);
+        scoreSO.Value = 0;
     }
 }
 

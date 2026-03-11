@@ -1,9 +1,13 @@
-// using UnityEngine;
+using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
-// public class ResetGameValues : MonoBehaviour
-// {
-//     private void Start()
-//     {
-//         FindObjectOfType<ScoreManager>().SetScore(0);
-//     }
-// }
+public class ResetGameValues : MonoBehaviour
+{
+    [SerializeField]
+    private FloatSO scoreSO;
+    private void Start()
+    {
+        scoreSO.Value = 0;
+    }
+}
